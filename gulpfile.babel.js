@@ -271,8 +271,8 @@ const live08 = gulp.parallel([watch08]);
 const live09 = gulp.parallel([watch09]);
 
 export const dev = gulp.series(
-  [prepare01, assets01, live01]
-  // [prepare02, assets02, live02]
+  // [prepare01, assets01, live01]
+  [prepare02, assets02, live02]
   // [prepare03, assets03, live03]
   // [prepare04, assets04, live04]
   // [prepare05, assets05, live05]
