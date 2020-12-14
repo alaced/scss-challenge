@@ -29,6 +29,7 @@ body {
         .title__item {
           display: flex;
           align-items: center;
+          cursor: pointer;
           .rotate {
             padding: 0 0 0.25rem 0;
             transform: rotate(180deg);
@@ -43,9 +44,15 @@ body {
       background-color: $red;
       grid-row: 2 / span 2;
       line-height: 1.9rem;
+      .menu__item {
+        cursor: pointer;
+      }
     }
     &:last-child {
       background-color: $yellow;
+      span {
+        cursor: pointer;
+      }
     }
   }
 }
