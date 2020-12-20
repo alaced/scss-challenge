@@ -78,6 +78,14 @@ const routes09 = {
   },
 };
 
+const routes10 = {
+  css: {
+    watch: "project10/src/scss/*",
+    src: "project10/src/scss/styles.scss",
+    dest: "project10/dist/css",
+  },
+};
+
 const styles01 = () =>
   gulp
     .src(routes01.css.src)
@@ -195,6 +203,19 @@ const styles09 = () =>
     .pipe(minify())
     .pipe(gulp.dest(routes09.css.dest));
 
+const styles10 = () =>
+  gulp
+    .src(routes10.css.src)
+    .pipe(sass().on("error", sass.logError))
+    .pipe(
+      autoprefixer({
+        flexbox: true,
+        grid: "autoplace",
+      })
+    )
+    .pipe(minify())
+    .pipe(gulp.dest(routes10.css.dest));
+
 const watch01 = () => {
   gulp.watch(routes01.css.watch, styles01);
 };
@@ -229,6 +250,9 @@ const watch08 = () => {
 const watch09 = () => {
   gulp.watch(routes09.css.watch, styles09);
 };
+const watch10 = () => {
+  gulp.watch(routes10.css.watch, styles10);
+};
 
 const clean01 = () => del(["project01/dist/"]);
 const clean02 = () => del(["project02/dist/"]);
@@ -239,6 +263,7 @@ const clean06 = () => del(["project06/dist/"]);
 const clean07 = () => del(["project07/dist/"]);
 const clean08 = () => del(["project08/dist/"]);
 const clean09 = () => del(["project09/dist/"]);
+const clean10 = () => del(["project10/dist/"]);
 
 const prepare01 = gulp.series([clean01]);
 const prepare02 = gulp.series([clean02]);
@@ -249,6 +274,7 @@ const prepare06 = gulp.series([clean06]);
 const prepare07 = gulp.series([clean07]);
 const prepare08 = gulp.series([clean08]);
 const prepare09 = gulp.series([clean09]);
+const prepare10 = gulp.series([clean10]);
 
 const assets01 = gulp.series([styles01]);
 const assets02 = gulp.series([styles02]);
@@ -259,6 +285,7 @@ const assets06 = gulp.series([styles06]);
 const assets07 = gulp.series([styles07]);
 const assets08 = gulp.series([styles08]);
 const assets09 = gulp.series([styles09]);
+const assets10 = gulp.series([styles10]);
 
 const live01 = gulp.parallel([watch01]);
 const live02 = gulp.parallel([watch02]);
@@ -269,6 +296,7 @@ const live06 = gulp.parallel([watch06]);
 const live07 = gulp.parallel([watch07]);
 const live08 = gulp.parallel([watch08]);
 const live09 = gulp.parallel([watch09]);
+const live10 = gulp.parallel([watch10]);
 
 export const dev = gulp.series(
   // [prepare01, assets01, live01]
@@ -277,7 +305,8 @@ export const dev = gulp.series(
   // [prepare04, assets04, live04]
   // [prepare05, assets05, live05]
   // [prepare06, assets06, live06]
-  [prepare07, assets07, live07]
+  // [prepare07, assets07, live07]
   // [prepare08, assets08, live08]
   // [prepare09, assets09, live09]
+  [prepare10, assets10, live10]
 );
