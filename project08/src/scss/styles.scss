@@ -1,0 +1,166 @@
+@import url("https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Josefin+Slab:wght@400;500;600;700&display=swap");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+@import "_reset.scss";
+@import "_variables.scss";
+@import "_mixins.scss";
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  width: 100%;
+  height: 100vh;
+  box-sizing: border-box;
+}
+
+.main {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 2fr 50px 1fr;
+  .header__wrapper {
+    padding: 0px 10px 10px 10px;
+    background-color: $orange;
+    .header {
+      height: 100%;
+      display: grid;
+      grid-template-rows: 10px repeat(6, 1fr);
+      background-color: $red;
+      border: 2px solid $red;
+      border-top: none;
+      gap: 2px;
+      .header__lists {
+        display: grid;
+        grid-template-columns: 30px 2.5fr 1fr;
+        background-color: $red;
+        gap: 2px;
+        color: $red;
+
+        .lists__header {
+          @include header;
+          justify-content: center;
+          writing-mode: vertical-rl;
+          transform: rotate(-180deg);
+          font-size: 0.9rem;
+        }
+        .lists__title {
+          @include header;
+          padding: 0px 10px;
+          font-size: 80px;
+          font-weight: 500;
+          letter-spacing: -6.5px;
+        }
+        &:first-child {
+          .lists__info {
+            background-color: $orange;
+          }
+        }
+        .lists__info {
+          @include header;
+          display: grid !important;
+          grid-template-rows: 1fr 1fr;
+          justify-items: center;
+          background-color: red;
+          gap: 2px;
+          justify-items: stretch;
+          align-items: stretch;
+          & > div {
+            background-color: $orange;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            text-align: center;
+            letter-spacing: -1.5px;
+          }
+          .info__desc {
+            padding: 10px;
+          }
+          .info__date {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .btn {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              border-radius: 20px;
+              background-color: $red;
+              color: $orange;
+              font-size: 0.8rem;
+              width: 80%;
+              height: 30px;
+            }
+          }
+        }
+        &:nth-child(3) {
+          color: white;
+          background-color: white;
+          border: 2px solid white;
+          .lists__info {
+            background-color: white;
+            .btn {
+              background-color: white;
+            }
+          }
+        }
+      }
+    }
+  }
+  .banner {
+    background-color: $pink;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    position: relative;
+    .banner__items {
+      padding: 10px 0px;
+      display: flex;
+      align-items: center;
+      writing-mode: vertical-rl;
+      font-size: 1.5rem;
+      &:nth-child(2) {
+        background-color: $blue;
+        justify-content: flex-start;
+        transform: rotate(-180deg);
+      }
+    }
+    .flower {
+      position: absolute;
+      top: 46.6%;
+      font-size: 3.2rem;
+    }
+  }
+  .content {
+    display: grid;
+    grid-template-rows: 50px 1fr;
+    background-color: $red;
+    .content__type {
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 1.4rem;
+      letter-spacing: -1.5px;
+      i {
+        padding-right: 5px;
+        font-size: 1.3rem;
+      }
+      .type__column {
+        display: flex;
+        align-items: center;
+      }
+    }
+    .content__list {
+      padding: 10px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      .content__items {
+        border-top: 2px solid black;
+        padding: 5px;
+        .content__title {
+          font-size: 1.4rem;
+          font-weight: 500;
+          line-height: 1.5rem;
+        }
+      }
+    }
+  }
+}
