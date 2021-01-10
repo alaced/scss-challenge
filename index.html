@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hi, there</title>
     <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link rel="stylesheet" href="https://use.typekit.net/cyr0xpl.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
       rel="stylesheet"
@@ -13,7 +14,6 @@
       body {
         font-family: "Roboto", sans-serif;
         padding: 30px;
-
         line-height: 1;
         background-color: #f6f6f6;
         padding: 30px;
@@ -28,43 +28,63 @@
         all: unset;
         cursor: pointer;
       }
+      .header {
+        padding-bottom: 10px;
+        font-size: 2rem;
+        font-weight: 600;
+        font-family: proxima-nova, sans-serif;
+      }
+      .list__item {
+        font-size: 1.1rem;
+        margin-bottom: 20px;
+        padding: 20px 20px;
+        border-radius: 20px;
+        cursor: pointer;
+        box-shadow: 0px 5px 25px -20px rgba(2, 31, 31, 0.7);
+        letter-spacing: 1px;
+      }
+      .list__item:hover {
+        box-shadow: 0 4px 9px rgba(0, 0, 0, 0.236);
+        transition: box-shadow 0.2s ease-in-out;
+      }
       .warning {
         color: darkred;
-        padding: 30px 0px;
+        padding-bottom: 40px;
       }
     </style>
   </head>
   <body>
-    <h1>Nomad Coders SCSS-Challenge</h1>
+    <div class="header">Nomad Coders SCSS-Challenge</div>
     <h3 class="warning">! Two-week project(20/12/07 ~ 20/12/20) !</h3>
-    <ul class="list">
-      <li class="list__item">
-        <h3><a href="project01/index01.html">Paris Colours</a></h3>
-      </li>
-      <li class="list__item">
-        <h3><a href="project02/index02.html">Bad Religion</a></h3>
-      </li>
-      <li class="list__item">
-        <h3><a href="project03/index03.html">Ostrich</a></h3>
-      </li>
-      <li class="list__item">
-        <h3><a href="project04/index04.html">Chocolate</a></h3>
-      </li>
-      <li class="list__item">
-        <h3><a href="project05/index05.html">CHANGES</a></h3>
-      </li>
-      <li class="list__item">
-        <h3><a href="project06/index06.html">Cafe L'Amant</a></h3>
-      </li>
-      <li class="list__item">
-        <h3><a href="project07/index07.html">Salon de Paris</a></h3>
-      </li>
-      <li class="list__item">
-        <h3><a href="project08/index08.html">Art</a></h3>
-      </li>
-      <li class="list__item">
-        <h3><a href="project10/index10.html">PRADA</a></h3>
-      </li>
-    </ul>
+
+    <div class="list">
+      <div class="list__item">
+        <a href="project01/index01.html">Paris Colours</a>
+      </div>
+      <div class="list__item">
+        <a href="project02/index02.html">Bad Religion</a>
+      </div>
+      <div class="list__item">
+        <a href="project03/index03.html">Ostrich</a>
+      </div>
+      <div class="list__item">
+        <a href="project04/index04.html">Chocolate</a>
+      </div>
+      <div class="list__item">
+        <a href="project05/index05.html">CHANGES</a>
+      </div>
+      <div class="list__item">
+        <a href="project06/index06.html">Cafe L'Amant</a>
+      </div>
+      <div class="list__item">
+        <a href="project07/index07.html">Salon de Paris</a>
+      </div>
+      <div class="list__item">
+        <a href="project08/index08.html">Art</a>
+      </div>
+      <div class="list__item">
+        <a href="project10/index10.html">PRADA</a>
+      </div>
+    </div>
   </body>
 </html>
